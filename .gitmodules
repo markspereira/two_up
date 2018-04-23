@@ -1,0 +1,3 @@
+[submodule "contracts/TwoUp"]
+	path = contracts/TwoUp
+	url = https://github.com/jzaki/TwoUp
