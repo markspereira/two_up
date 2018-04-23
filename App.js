@@ -11,6 +11,7 @@ import Kip from './src/App/2UP/Kip'
 import JoinGame from './src/App/2UP/JoinGame'
 import GameList from './src/App/2UP/GameList'
 import WinnerScreen from './src/App/2UP/WinnerScreen'
+import HeadsOrTails from './src/App/2UP/HeadsOrTails';
 
 
 export const Tabs = TabNavigator({
@@ -49,6 +50,7 @@ export const Main = StackNavigator({
   GameList: { screen: GameList },
   QRCode: { screen: QRCode },
   WinnerScreen: { screen: WinnerScreen },
+  HeadsOrTails: { screen: HeadsOrTails },
 });
 
 export default class App extends Component {

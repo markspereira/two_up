@@ -82,25 +82,20 @@ export default class Main extends Component<Props> {
   }
 
   _joinGame = () => {
-    navigate('HeadsOrTails', {data: 'JoinGame'});
+    navigate('JoinGame');
   };
   _createGame = () => {
-    navigate('HeadsOrTails', {data: 'QRCode'})
+    navigate('QRCode')
   };
 
   render() {
     const {account, balance, publicAddress, exchangeRate, txCount} = this.state;
     return (
       <View style={{flex: 1, backgroundColor: color.blue, alignItems: 'center', justifyContent: 'space-around', padding: 50}}>
+        <Text style={{fontSize: 40, color: color.darkBlue, fontWeight: 'bold'}}>Choose either Heads</Text>
         <Image style={{height: 200, resizeMode: 'contain'}} source={require('../../../public/ethereum_coin.png')} />
-        <Text style={{fontSize: 100, color: color.darkBlue, fontWeight: 'bold'}}>2UP!</Text>
-        <TouchableOpacity onPress={this._joinGame} style={{ backgroundColor: color.darkBlue, borderRadius: 10, height: 50, width: 250, alignItems: 'center', justifyContent: 'center'}}>
-          <Text style={{fontSize: 20, color: color.blue, fontWeight: 'bold'}}>Join Game</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this._createGame} style={{ backgroundColor: color.darkBlue, borderRadius: 10, height: 50, width: 250, alignItems: 'center', justifyContent: 'center'}}>
-          <Text style={{fontSize: 20, color: color.blue, fontWeight: 'bold'}}>Create Game</Text>
-        </TouchableOpacity>
-      </View>
+        <Text style={{fontSize: 40, color: color.darkBlue, fontWeight: 'bold'}}>or Tails</Text>
+        <Image style={{height: 200, resizeMode: 'contain'}} source={require('../../../public/tails.png')} />      </View>
     )
   }
 }
