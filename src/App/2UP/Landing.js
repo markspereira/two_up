@@ -61,18 +61,18 @@ export default class Main extends Component<Props> {
   };
 
   componentDidMount() {
-    web3.eth.accounts.create()
-      .then(res => console.log('CREATED ACCOUNT: ', res));
-    fetch('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        this.setState({exchangeRate: responseJson.USD})
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    // web3.eth.accounts.create()
+    //   .then(res => console.log('CREATED ACCOUNT: ', res));
+    // fetch('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD')
+    //   .then((response) => response.json())
+    //   .then((responseJson) => {
+    //     this.setState({exchangeRate: responseJson.USD})
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
     web3.eth.getTransactionCount('0x37386A1c592Ad2f1CafFdc929805aF78C71b1CE7')
-      .then(txCount => this.setState({txCount}));
+      .then(txCount => this.setState({ txCount }));
     web3.eth.getCoinbase((err, coinbase) => {
       const balance = web3.eth.getBalance('0x37386A1c592Ad2f1CafFdc929805aF78C71b1CE7', (err2, balance) => {
         console.log('balance ' + balance);
